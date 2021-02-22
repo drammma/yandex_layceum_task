@@ -2,7 +2,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
-PAGES = ['http://127.0.0.1:8081/index', 'http://127.0.0.1:8081/promotion', 'http://127.0.0.1:8081/image_mars']
+PAGES = ['http://127.0.0.1:8081/index', 'http://127.0.0.1:8081/promotion', 'http://127.0.0.1:8081/image_mars',
+         'http://127.0.0.1:8081/promotion_image']
+
 
 @app.route('/')
 def main_page():
@@ -20,8 +22,9 @@ def promotion_page():
                       'Мы сделаем обитаемыми безжизненные пока планеты.', 'И начнем с Марса!', 'Присоединяйся!']
     return '</br>'.join(countdown_list)
 
+
 @app.route('/image_mars')
-def greeting_page():
+def image_mars_page():
     return """<!doctype html>
                 <html lang="en">
                     <head>
@@ -34,6 +37,12 @@ def greeting_page():
                     <p align="center">Вот она какая, красная планета</p>
                   </body>
                 </html>"""
+
+
+@app.route('/image_promotion')
+def promotion_image_page():
+    return "И на Марсе будут яблони цвести!"
+
 
 if __name__ == '__main__':
     print(*PAGES, sep='\n')
