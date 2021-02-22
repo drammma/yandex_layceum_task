@@ -2,11 +2,11 @@ from flask import Flask
 
 app = Flask(__name__)
 
-PAGES = ['http://127.0.0.1:8080/index', 'http://127.0.0.1:8080/promotion', 'http://127.0.0.1:8080/image_mars']
+PAGES = ['http://127.0.0.1:8081/index', 'http://127.0.0.1:8081/promotion', 'http://127.0.0.1:8081/image_mars']
 
 @app.route('/')
 def main_page():
-    return "Миссия Колонизация Марса"
+    return "Миссия Марса"
 
 
 @app.route('/index')
@@ -29,12 +29,12 @@ def greeting_page():
                     <title>Привет, Марс!</title>
                   </head>
                   <body>
-                    <h1>Жди нас, Марс!</h1>
-                    <img src="/static/img/mars.jpg" alt="картинка планеты">
-                    <br>Вот она, красная планета</br>
+                    <h1 align="center">Жди нас, Марс!</h1>
+                    <p align="center"><img align="center" src="/static/img/planet.png" width="550" height="400" alt="картинка планеты"></p>
+                    <p align="center">Вот она какая, красная планета</p>
                   </body>
                 </html>"""
 
 if __name__ == '__main__':
     print(*PAGES, sep='\n')
-    app.run(port=8080, host='127.0.0.1')
+    app.run(port=8081, host='127.0.0.1')
