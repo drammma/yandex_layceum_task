@@ -2,8 +2,8 @@ from flask import Flask, url_for, request
 
 app = Flask(__name__)
 
-PAGES = ['http://127.0.0.1:8080/index', 'http://127.0.0.1:8080/promotion', 'http://127.0.0.1:8080/image_mars',
-         'http://127.0.0.1:8080/promotion_image', 'http://127.0.0.1:8080/astronaut_selection']
+PAGES = ['http://127.0.0.2:8080/index', 'http://127.0.0.2:8080/promotion', 'http://127.0.0.2:8080/image_mars',
+         'http://127.0.0.2:8080/promotion_image', 'http://127.0.0.2:8080/astronaut_selection']
 
 
 @app.route('/')
@@ -52,7 +52,7 @@ def promotion_image_page():
                         <title>Привет, Марс!</title>
                       </head>
                       <body>
-                        <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}"/>
+                        <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
                         <h1 align="center">Жди нас, Марс</h1>
 
                         <p align="center"><img align="center" src="/static/img/planet.png" width="550" height="350" alt="картинка планеты"></p>
@@ -179,4 +179,4 @@ def astronaut_selection_page():
 
 if __name__ == '__main__':
     print(*PAGES, sep='\n')
-    app.run(port=8080, host='127.0.0.1')
+    app.run(port=8080, host='127.0.0.2')
