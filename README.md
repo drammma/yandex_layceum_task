@@ -1,1 +1,1 @@
-# yandex_layceum_task
+# Задачи из Яндекс.Лицея
